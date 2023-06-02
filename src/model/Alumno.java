@@ -36,7 +36,38 @@ public class Alumno {
         this.curso=curso.substring(Math.min(2,curso.length()));
     }
 
-    //metodo para delimitar caracteres del curso -> 2 caracteres
+    public int getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public int getMedia() {
+        return media;
+    }
+
+    public Date getfNacimiento() {
+        return fNacimiento;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setMedia(int media) {
+        this.media = media;
+    }
+
+    public void setfNacimiento(Date fNacimiento) {
+        this.fNacimiento = fNacimiento;
+    }
+//metodo para delimitar caracteres del curso -> 2 caracteres
 
 
 }
