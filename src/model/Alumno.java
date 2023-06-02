@@ -15,10 +15,28 @@ public class Alumno {
     }
     public Alumno(int id, String nombre, String curso, int media, Date fNacimiento) {
         this.id = id;
-        this.nombre = nombre;
-        this.curso = curso;
+        setNombre(nombre);
+        setCurso(curso);
         this.media = media;
         this.fNacimiento = fNacimiento;
     }
+
+    //metodo para delimitar caracteres del nombre ->50 carateres
+
+    public void setNombre(String nombre) {
+        if(nombre.length()<51 && !nombre.startsWith("'") && !nombre.endsWith("'")){
+        this.nombre = nombre.substring(0,Math.min(TAMNOMBRE,nombre.length()));
+
+        }
+        else{
+            System.out.println("nombre no valido");
+        }
+    }
+    public void setCurso(String curso){
+        this.curso=curso.substring(Math.min(2,curso.length()));
+    }
+
+    //metodo para delimitar caracteres del curso -> 2 caracteres
+
 
 }
