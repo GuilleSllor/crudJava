@@ -1,6 +1,9 @@
 package model;
 
 import java.sql.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Alumno {
     private int id;
@@ -13,14 +16,21 @@ public class Alumno {
     public Alumno(int id){
         this.id=id;
     }
-    public Alumno(int id, String nombre, String curso, int media, Date fNacimiento) {
+    public Alumno(int id, String nombre, String curso, int media, String fecha) throws ParseException {
         this.id = id;
         setNombre(nombre);
         setCurso(curso);
         this.media = media;
-        this.fNacimiento = fNacimiento;
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+        this.fNacimiento = formato.parse(fecha);
     }
-
+    public Alumno( String nombre, String curso, int media, String fecha) throws ParseException {
+        setNombre(nombre);
+        setCurso(curso);
+        this.media = media;
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+        this.fNacimiento = formato.parse(fecha);
+    }
     //metodo para delimitar caracteres del nombre ->50 carateres
 
     public void setNombre(String nombre) {
